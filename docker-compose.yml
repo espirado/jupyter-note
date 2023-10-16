@@ -5,7 +5,8 @@ services:
       context: .
       dockerfile: ./docker/jupyter/Dockerfile
     volumes:
-      - ./work:/home/espirado/work
+      - /home/espirado:/home/espirado  # Mount local /home/espirado to /home/espirado in container
+      - /home/espirado/work:/work  # Mount local /home/espirado/work to /work in container
     ports:
       - 8888:8888
     container_name: jupyter_notebook
